@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'reports/subjects'
 
   resources :teachers
+  resources :visitors, only: :index
 end
