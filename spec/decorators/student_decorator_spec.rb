@@ -7,6 +7,9 @@ describe StudentDecorator do
   let(:second_subject_item) { create :subject_item }
   let!(:note_1) { create :subject_item_note, value: 5, student: student, subject_item: second_subject_item }
   let!(:note_2) { create :subject_item_note, value: 4, student: student, subject_item: second_subject_item }
+  let!(:other_student_note) { create :subject_item_note, value: 1,
+                                     student: create(:student, first_name: 'Mr', last_name: 'Robot'),
+                                     subject_item: second_subject_item }
 
   describe "#full_name" do
     subject { student.decorate.full_name }

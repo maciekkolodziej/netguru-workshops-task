@@ -4,6 +4,6 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
-    '%.2f' % subject_item.subject_item_notes.average(:value).to_f
+    '%.2f' % subject_item_notes.where(subject_item_id: subject_item.id).average(:value).to_f
   end
 end
